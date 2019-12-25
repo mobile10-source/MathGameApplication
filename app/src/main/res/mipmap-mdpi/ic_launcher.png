@@ -1,0 +1,58 @@
+package com.example.kuis1;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+    TextView tvPertanyaan;
+    RadioGroup rgJawaban;
+    RadioButton rbA, rbB, rbC, rbD;
+    Button btSubmit;
+    int nomor = 0;
+    public static int benar, salah, nilai;
+
+    //Pertanyaan kuis
+    String[] pertanyaan = new String[]{
+            "1. Ibu kota Indonesia adalah ...",
+            "2. Presiden pertama Indonesia adalah ...",
+            "3. Lambang negara Indonesia adalah ...",
+            "4. Judul lagu kebangsaan Indonesia adalah ...",
+            "5. Warna bendera Indonesia adalah ..."
+    };
+
+    //Pilihan jawaban
+    String[] jawaban = new String[]{
+            "Jakarta","Bandung","Surabaya","Semarang",
+            "Soeharto","Soekarno","BJ. Habibie","Gus Dur",
+            "Burung Elang Jawa","Bunga Teratai","Bendera Merah Putih","Burung Garuda",
+            "Indonesia Tanah Airku","Hiduplah Indonesia Raya","Indonesia Merdeka","Indonesia Raya",
+            "Merah Putih Biru","Hitam Putih","Merah Putih","Putih Merah"
+    };
+
+    //Jawaban yang benar
+    String[] jawaban_benar = new String[]{
+            "Jakarta",
+            "Soekarno",
+            "Burung Garuda",
+            "Indonesia Raya",
+            "Merah Putih"
+    };
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        tvPertanyaan = (TextView)findViewById(R.id.tv_pertanyaan);
+        rgJawaban = (RadioGroup)findViewById(R.id.rg_jawaban);
+        rbA = (RadioButton)findViewById(R.id.rb_a);
+        rbB = (RadioButton)findViewById(R.id.rb_b);
+        rbC = (RadioButton)findViewById(R.id.rb_c);
+        rbD = (RadioButton)findViewById(R.id.rb_d);
+        btSubmit = (Bu
